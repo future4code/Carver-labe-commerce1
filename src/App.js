@@ -1,17 +1,17 @@
 import React from 'react';
 import { MainContainer, GlobalStyle } from './style'
 import LateralEsquerda from './components/lateralEsquerda/lateralEsquerda'
-import ConteudoCentral from './components/conteúdoCentral/conteudoCentral';
+import ConteudoCentral from './components/conteudoCentral/conteudoCentral';
 import LateralDireita from './components/lateralDireita/lateralDireita'
 
 export default class App extends React.Component {
 
   // Estado para comunicação entre Lateral Esquerda (Filtros) e Conteúdo Central (Produtos)
   state = {
-    produtos: [],
     query: '',
     maxPrice: '',
     minPrice: '',
+    sortingParameter: 'produto',
     order: 'asc'
   }
 
@@ -48,6 +48,7 @@ export default class App extends React.Component {
         />
         <ConteudoCentral 
           order={this.state.order}
+          sortingParameter={this.state.sortingParameter}
         />
         <LateralDireita />
       </MainContainer>

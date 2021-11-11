@@ -1,7 +1,9 @@
 import React from 'react';
 import { ContainerLateralEsquerda } from './style'
 
-export default LateralEsquerda = (props) => {
+
+export default function LateralEsquerda(props) {
+
     return (
         <ContainerLateralEsquerda>
             <h1>Filtros</h1>
