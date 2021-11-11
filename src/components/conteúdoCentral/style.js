@@ -16,10 +16,11 @@ export const ContainerOrdenacao = styled.div`
     display: flex;
     justify-content: flex-end;
     label{
-
+        
     }
 `
 
 export const ContainerCards = styled.div`
     display: grid;
+    grid-auto-flow: row;
 `

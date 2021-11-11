@@ -1,17 +1,18 @@
 import React from 'react';
 import { ContainerLateralEsquerda } from './style'
 
-export default class LateralEsquerda extends React.Component {
+export default LateralEsquerda = (props) => {
 
-    render() {
-
-        return(
-            <ContainerLateralEsquerda>
-                <h1>Filtros</h1>
-                <input placeholder="valor mínimo" />
-                <input placeholder="valor máximo" />
-                <input placeholder="item" />
-            </ContainerLateralEsquerda>
-        )
-    }
+    return (
+        <ContainerLateralEsquerda>
+            <h1>Filtros</h1>
+            <input placeholder="valor mínimo" />
+            <input placeholder="valor máximo" />
+            <input
+                onChange={props.updateQuery}
+                value={props.query}
+                placeholder="Pesquisa"
+            />
+        </ContainerLateralEsquerda>
+    )
 }
