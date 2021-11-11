@@ -1,8 +1,8 @@
 import React from 'react';
 import { MainContainer, GlobalStyle } from './style'
-import LateralEsquerda from './components/lateralEsquerda/lateralEsquerda'
-import ConteudoCentral from './components/conteudoCentral/conteudoCentral';
-import LateralDireita from './components/lateralDireita/lateralDireita'
+import LateralEsquerda from './components/lateralEsquerda/LateralEsquerda'
+import ConteudoCentral from './components/home/Home';
+import LateralDireita from './components/lateralDireita/LateralDireita'
 
 export default class App extends React.Component {
 
