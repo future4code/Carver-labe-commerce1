@@ -1,13 +1,20 @@
 import React from 'react';
 import { ContainerLateralEsquerda } from './style'
 
+
 export default function LateralEsquerda(props) {
 
     return (
         <ContainerLateralEsquerda>
             <h1>Filtros</h1>
-            <input placeholder="valor mínimo" />
-            <input placeholder="valor máximo" />
+            <input 
+                onChance={props.updateMinPrice}
+                value={props.minPrice}
+                placeholder="valor mínimo" />
+            <input 
+                onChance={props.updateMaxPrice}
+                value={props.maxPrice}
+                placeholder="valor máximo" />
             <input
                 onChange={props.updateQuery}
                 value={props.query}
