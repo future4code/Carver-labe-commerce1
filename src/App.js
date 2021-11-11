@@ -1,8 +1,8 @@
 import React from 'react';
 import { MainContainer, GlobalStyle, ContainerConteudoCentral, ContainerHeader, ContainerOrdenacao, ContainerCards } from './style'
-import LateralEsquerda from './components/lateralEsquerda/LateralEsquerda'
-import LateralDireita from './components/lateralDireita/LateralDireita'
-import Card from './components/card/Card'
+import LateralEsquerda from './components/lateralEsquerda/lateralEsquerda'
+import LateralDireita from './components/lateralDireita/lateralDireita'
+import Card from './components/card/card'
 import listaProdutos from './data/produtos.json'
 
 export default class App extends React.Component {
