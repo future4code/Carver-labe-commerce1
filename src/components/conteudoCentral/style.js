@@ -16,11 +16,12 @@ export const ContainerOrdenacao = styled.div`
     display: flex;
     justify-content: flex-end;
     label{
-        
+        margin: 0 10px;
     }
 `
 
 export const ContainerCards = styled.div`
-    display: grid;
-    grid-auto-flow: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 `
