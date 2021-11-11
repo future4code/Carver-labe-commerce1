@@ -17,7 +17,7 @@ export default class ConteudoCentral extends React.Component {
                         </select>
                     </ContainerOrdenacao>
                     <ContainerCards>
-
+                        
                     </ContainerCards>
                 </ContainerHeader>
             </ContainerConteudoCentral>
