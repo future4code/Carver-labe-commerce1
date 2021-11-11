@@ -1,15 +1,19 @@
 import styled from 'styled-components'
 
+// styled Conteúdo Central
+
 export const ContainerConteudoCentral = styled.div`
-    flex-grow: 7;
-    border: 5px solid blue;
+    flex-grow: 5;
+    /* max-width: 900px; */
     display: flex;
     flex-direction: column;
 `
 
 export const ContainerHeader = styled.div`
+    margin: 10px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
 `
 
 export const ContainerOrdenacao = styled.div`
@@ -21,7 +25,8 @@ export const ContainerOrdenacao = styled.div`
 `
 
 export const ContainerCards = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, 220px);
+    justify-content: space-around;
 `
