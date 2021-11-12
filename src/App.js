@@ -218,11 +218,22 @@ export default class App extends React.Component {
             {produtos}
           </ContainerCards>
         </ContainerConteudoCentral>
-        <LateralDireita
-          produtos={this.state.produtos}
-          carrinho={this.state.carrinho}
-        />
+        <LateralDireita>
+            {this.props.propsprodutos.listaProdutos.map(element => (
+              <ProdutoCarrinho
+                ApagarDoCarrinho={this.props.functionLateralEsquerda}
+                propsname={element.name}
+                propsQuantidade={element.quantidade}
+              />
+            ))}
+          </LateralDireita>
+          <Texts>Total: R${this.props.valorTotal},00</Texts>
+          <Overlay show={this.props.show} onClick={this.props.closeCart} />
+      
       </MainContainer>
+      
+           
     )
   }
 }
+
