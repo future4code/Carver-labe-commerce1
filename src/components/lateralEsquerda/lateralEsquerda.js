@@ -8,13 +8,13 @@ export default function LateralEsquerda(props) {
             <h1>🛸🚀 Filtros</h1>
             <input 
                 type="number"
-                onChance={props.updateMinPrice}
+                onChange={props.updateMinPrice}
                 value={props.minPrice}
                 placeholder="valor mínimo" 
                 />
             <input 
                 type="number"
-                onChance={props.updateMaxPrice}
+                onChange={props.updateMaxPrice}
                 value={props.maxPrice}
                 placeholder="valor máximo" 
                 />
