@@ -1,15 +1,18 @@
 import React from 'react'
-import { CardContainer } from './style'
+import { CardContainer, CardButton } from './style'
 
 export default function Card(props) {
     return <CardContainer>
         <img src={props.item.imageUrl} />
-        <div className="card-div-text">
+
+        <div>
         <h2>{props.item.name}</h2>
         <p>{props.item.value.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})}</p>
         </div>
-        <div className="card-div-button">
-            <button>Adicionar ao Carrinho</button>
-        </div>
+
+        <CardButton>
+            <button  onClick={() => {props.adicionarCarrinho(props.item.id)}}>Adicionar ao Carrinho</button>
+        </CardButton>
+        
     </CardContainer>
 }
