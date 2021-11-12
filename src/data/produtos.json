@@ -3,36 +3,37 @@
         "id": 1,
         "name": "Meteorito da Lua",
         "value": 10000.0,
-        "imageUrl": "https://picsum.photos/id/512/200/200"
+        "imageUrl": "https://revistapesquisa.fapesp.br/wp-content/uploads/2020/03/054-055_meteorito_289-0-1200.jpg"
+
     },
     {
         "id": 2,
         "name": "Meteorito de Marte",
         "value": 15000.0,
-        "imageUrl": "https://picsum.photos/id/513/200/200"
+        "imageUrl": "https://vpchothuegoldenking.com/wp-content/uploads/2019/09/a4074feb77c1a330622a3d8aea3d23f4.jpg"
     },
     {
         "id": 3,
         "name": "Meteorito de Venus",
         "value": 25000.0,
-        "imageUrl": "https://picsum.photos/id/514/200/200"
+        "imageUrl": "https://ogimg.infoglobo.com.br/in/23934277-c8c-d63/FT1086A/meteorito.jpg"
     },
     {
         "id": 4,
         "name": "Meteorito de Mercurio",
         "value": 18000.0,
-        "imageUrl": "https://picsum.photos/id/515/200/200"
+        "imageUrl": "https://midias.correiobraziliense.com.br/_midias/jpg/2021/07/08/675x450/1__114963617_bennu-6749372.jpg"
     },
     {
         "id": 5,
         "name": "Meteorito de Jupiter",
         "value": 40000.0,
-        "imageUrl": "https://picsum.photos/id/516/200/200"
+        "imageUrl": "https://s2.glbimg.com/5ECkn-H6kWCtkuBy8YeIJR6s5LY=/0x0:1500x1000/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/U/n/zfA64nRPe9ktDwQrWw2Q/wedderburn-meteorite-e-12197-1017941-medium.jpg"
     },
     {
         "id": 6,
         "name": "Meteorito de Urano",
         "value": 100000.0,
-        "imageUrl": "https://picsum.photos/id/517/200/200"
+        "imageUrl": "https://m.media-amazon.com/images/I/611hJ7YRS7L._AC_SX466_.jpg"
     }
 ]
