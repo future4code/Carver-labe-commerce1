@@ -13,6 +13,9 @@ export const CardContainer = styled.div`
    box-shadow: 3px 3px 3px #B8BACF;
    img{
       border-radius: 40px 5px 40px 5px;
+      height: 200px;
+      object-fit: cover;
+      object-position: center; 
    }
    h2{
       padding: 0 10px;

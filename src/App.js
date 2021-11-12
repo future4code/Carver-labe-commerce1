@@ -1,8 +1,8 @@
 import React from 'react';
 import { MainContainer, GlobalStyle, ContainerConteudoCentral, ContainerHeader, ContainerOrdenacao, ContainerCards } from './style'
-import LateralEsquerda from './components/lateralEsquerda/lateralEsquerda'
-import LateralDireita from './components/lateralDireita/lateralDireita'
-import Card from './components/card/card'
+import LateralEsquerda from './components/lateralEsquerda/LateralEsquerda'
+import LateralDireita from './components/lateralDireita/LateralDireita'
+import Card from './components/card/Card'
 import listaProdutos from './data/produtos.json'
 
 
@@ -66,22 +66,22 @@ import listaProdutos from './data/produtos.json'
 //         this.setState({
 //           qty: this. state.qty -1;
 //         }
- 
+
 //      }
 
 //      render(){
-       
+
 //       return(
-       
+
 //        <div>
-       
+
 //        <div><h4>{this.props.name}: R$ {this.props.value}</h4> </div>
-       
+
 //        <div>Quantidade: {this.props.qty}</div>
-       
+
 //        </div>
 //        <div>
-      
+
 //       <button type="button" class="btn btn-default" onClick= "{this.adicionar}">+1</button>
 //       <button type="button" class="btn btn-default" onClick= "{this.remover}">-1</button>
 //        </div>
@@ -107,43 +107,80 @@ import listaProdutos from './data/produtos.json'
 //          let componente = this;
 //          let products = this.state.listaProdutos. 
 //       }
-     
+
 
 
 export default class App extends React.Component {
 
-  
-  // Estado para comunicação entre Lateral Esquerda (Filtros) e Conteúdo Central (Produtos)
   state = {
     produtos: listaProdutos,
+    carrinho: [],
     query: '',
     maxPrice: '',
     minPrice: '',
-    sortingParameter: 'produto',
-    order: 'asc',
-    listaFiltrada: ''
+    sortingParameter: 'name',
+    order: 1
   }
 
-  updateQuery = (evento) => {
+  updateQuery = (event) => {
     this.setState({
-      query: evento.target.value
+      query: event.target.value
     })
   }
 
-  updateMaxPrice = (evento) => {
+  updateMaxPrice = (event) => {
     this.setState({
-      maxPrice: evento.target.value
+      maxPrice: event.target.value
     })
   }
 
-  updateMinPrice = (evento) => {
+  updateMinPrice = (event) => {
     this.setState({
-      minPrice: evento.target.value
+      minPrice: event.target.value
+    })
+  }
+
+  // updateCarrinho = (id) => {
+  //   const novoCarrinho = this.state.produtos.filter((item) => {
+  //     if (item.id = id) {
+  //       return item
+  //     }
+  //   })
+
+  //   this.setState({
+  //     carrinho: novoCarrinho
+  //   })
+  // }
+
+  updateOrder = (event) => {
+    this.setState({
+      order: event.target.value
+    })
+  }
+
+  updateSortingParameter = (event) => {
+    this.setState({
+      sortingParameter: event.target.value
     })
   }
 
   render() {
-    // função para atualizar state lista-filtrada
+    const produtos = this.state.produtos.filter(item => {
+      return item.name.toLowerCase().includes(this.state.query.toLowerCase())
+    }).filter(item => {
+      return this.state.minPrice === "" || item.value >= this.state.minPrice
+    }).filter(item => {
+      return this.state.maxPrice === "" || item.value <= this.state.maxPrice
+    }).sort((currentItem, nextItem) => { 
+      if (this.state.sortingParameter === 'name') {
+        return this.state.order * currentItem.name.localeCompare(nextItem.name)
+      } else {
+        return this.state.order * (currentItem.value - nextItem.value)
+      }
+    }).map(item => {
+      return <Card key={item.id} item={item} />
+    })
+
     return (
       <MainContainer>
         <GlobalStyle />
@@ -157,41 +194,34 @@ export default class App extends React.Component {
         />
         <ContainerConteudoCentral>
           <ContainerHeader>
-            <h3>Quantidade de Produtos: {this.state.produtos.length} </h3>
+            <h3>Quantidade de Produtos: {produtos.length}</h3>
             <ContainerOrdenacao>
               <label>Ordenação</label>
-              <select>
-                <option>Crescente</option>
-                <option>Decrescente</option>
+              <select
+                name='sort'
+                value={this.state.sortingParameter}
+                onChange={this.updateSortingParameter}>
+                <option value='name'>Nome</option>
+                <option value='value'>Preço</option>
+              </select>
+              <select 
+                name='order'
+                value={this.state.order}
+                onChange={this.updateOrder}>
+                <option value={1}>Crescente</option>
+                <option valeu={-1}>Decrescente</option>
               </select>
             </ContainerOrdenacao>
           </ContainerHeader>
           <hr />
           <ContainerCards>
-            {this.state.produtos
-              .filter(item => {
-                return item.name.toLowerCase().includes(this.state.query.toLowerCase())
-              })
-              .filter(item => {
-                return this.state.minPrice === "" || item.value >= this.state.minPrice
-              })
-              .filter(item => {
-                return this.state.maxPrice === "" || item.value <= this.state.maxPrice
-              })
-              .sort((currentItem, nextItem) => {
-                switch (this.state.sortingParameter) {
-                  case "title":
-                    return this.state.order * currentItem.title.localeCompare(nextItem.title)
-                  default:
-                    return this.state.order * (currentItem.value - nextItem.value)
-                }
-              })
-              .map(item => {
-                return <Card key={item.id} item={item} />
-              })}
+            {produtos}
           </ContainerCards>
         </ContainerConteudoCentral>
-        <LateralDireita />
+        <LateralDireita
+          produtos={this.state.produtos}
+          carrinho={this.state.carrinho}
+        />
       </MainContainer>
     )
   }
