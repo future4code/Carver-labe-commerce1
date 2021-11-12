@@ -20,7 +20,9 @@ export const CardContainer = styled.div`
    h2{
       padding: 0 10px;
       margin: 5px;
-      font-size: calc(15px + 1 * ((100vw - 600px) / 600));
+      font-size: 0.93em;
+      font-weight: bolder
+      /* font-size: calc(15px + 1 * ((100vw - 600px) / 600)); */
    }
    p{
       padding: 0 10px;
@@ -40,4 +42,9 @@ export const CardContainer = styled.div`
       background-color: #999AC6;
       color: white;
    }
+
+   .card-div-button {
+      margin: 0 auto;
+}
 `
+

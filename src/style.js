@@ -13,8 +13,9 @@ export const GlobalStyle = createGlobalStyle`
 `
 
 export const MainContainer = styled.div`
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    /* width: 100vw; */
     background-color: #E8EBE4;
     display: flex;
 `
