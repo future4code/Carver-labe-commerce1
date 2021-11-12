@@ -5,8 +5,114 @@ import LateralDireita from './components/lateralDireita/LateralDireita'
 import Card from './components/card/Card'
 import listaProdutos from './data/produtos.json'
 
+
+
+// let listaProdutos = [
+//   {
+//     id: 1,
+//     name: "Meteorito da Lua",
+//     value: 10000.0,
+//     imageUrl: "https://picsum.photos/id/512/200/200"
+// },
+// {
+//     id: 2,
+//     name: "Meteorito de Marte",
+//     value: 15000.0,
+//     imageUrl: "https://picsum.photos/id/513/200/200"
+// },
+// {
+//     id: 3,
+//     name: "Meteorito de Venus",
+//     value: 25000.0,
+//     imageUrl: "https://picsum.photos/id/514/200/200"
+// },
+// {
+//     id: 4,
+//     name: "Meteorito de Mercurio",
+//     value: 18000.0,
+//     imageUrl: "https://picsum.photos/id/515/200/200"
+// },
+// {
+//     id: 5,
+//     name: "Meteorito de Jupiter",
+//     value: 40000.0,
+//     imageUrl: "https://picsum.photos/id/516/200/200"
+// },
+// {
+//     id: 6,
+//     name: "Meteorito de Urano",
+//     value: 100000.0,
+//     imageUrl: "https://picsum.photos/id/517/200/200"
+// }
+// ]
+
+// Class Produtos extends React.Component
+//      constructor(props){
+//        super(props)
+//        this.state = {
+//          qty: 0
+//        };
+
+//        this.adicionar = this.adicionar.bind(this);
+//        this.remover = this.remover.bind(this);
+//      }
+
+//      adicionar(){
+//        this.setState({
+//          qty: this. state.qty +1;
+//        }
+
+//        remover(){
+//         this.setState({
+//           qty: this. state.qty -1;
+//         }
+ 
+//      }
+
+//      render(){
+       
+//       return(
+       
+//        <div>
+       
+//        <div><h4>{this.props.name}: R$ {this.props.value}</h4> </div>
+       
+//        <div>Quantidade: {this.props.qty}</div>
+       
+//        </div>
+//        <div>
+      
+//       <button type="button" class="btn btn-default" onClick= "{this.adicionar}">+1</button>
+//       <button type="button" class="btn btn-default" onClick= "{this.remover}">-1</button>
+//        </div>
+//       ) 
+//       }
+//       class ListaProdutos extends React.Component{
+//         constructor(props){
+//           super(props);
+//           this.state = {
+//             listaProdutos: ""
+//           } 
+//         }
+//       }
+//       ComponentDidMount(){
+//         setTimeout(() => {
+//            this.state({listaProdutos : listaProdutos})
+//           }, 1000);
+//         }
+//       }
+
+//       render(){
+//          if(!this.state.listaProdutos) return <p>Carregando...</p>
+//          let componente = this;
+//          let products = this.state.listaProdutos. 
+//       }
+     
+
+
 export default class App extends React.Component {
 
+  
   // Estado para comunicação entre Lateral Esquerda (Filtros) e Conteúdo Central (Produtos)
   state = {
     produtos: listaProdutos,
