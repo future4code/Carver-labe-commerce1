@@ -42,9 +42,8 @@ export const CardContainer = styled.div`
       background-color: #999AC6;
       color: white;
    }
-
-   .card-div-button {
-      margin: 0 auto;
-}
 `
 
+export const CardButton = styled.div `
+      margin: 0 auto;
+`
