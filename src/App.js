@@ -40,28 +40,28 @@ export default class App extends React.Component {
 
   adicionarCarrinho = (id) => {
       console.log(id)
-    // const novoCarrinho = this.state.produtos.filter((item) => {
-    //   if (item.id === id) {
-    //     return item
-    //   }
-    // })
+    const novoCarrinho = this.state.produtos.filter((item) => {
+      if (item.id === id) {
+        return item
+      }
+    })
 
-    //     this.setState({
-    //   carrinho: novoCarrinho
-    // })
+        this.setState({
+      carrinho: [...this.state.carrinho, novoCarrinho[0]]
+    })
   }
 
-  // removerCarrinho = (id) => {
-  //   const novoCarrinho = this.state.produtos.filter((item) => {
-  //     if (item.id = id) {
-  //       return item
-  //     }
-  //   })
-
-  //   this.setState({
-  //     carrinho: novoCarrinho
-  //   })
-  // }
+  removerCarrinho = (id) => {
+      console.log(id)
+    const itemRemovido = this.state.carrinho.filter((item) => {
+      if (item.id !== id) {
+        return item
+      }
+    })
+    this.setState({
+      carrinho: itemRemovido
+    })
+  }
 
 
 
@@ -137,7 +137,9 @@ export default class App extends React.Component {
           produtos={this.state.produtos}
           carrinho={this.state.carrinho}
           removerCarrinho={this.removerCarrinho}
-        />
+          novoCarrinho={this.novoCarrinho}
+        >
+        </LateralDireita>
             
       </MainContainer>
       
